@@ -2,9 +2,9 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  user: <%= ENV["DATABASE_HOST"] || '127.0.0.1' %>
+  host: <%= ENV["DATABASE_HOST"] || '127.0.0.1' %>
   port: <%= ENV["DATABASE_PORT"] || '5432' %>
-  username: <%= ENV["DATABASE_USER"] || 'root' %>
+  username: <%= ENV["DATABASE_USER"] || 'postgres' %>
   password: <%= ENV["DATABASE_PASS"] || 'root' %>
 
 development:
@@ -17,4 +17,4 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV["DATABASE_NAME"] %>
+  database: my_taxi_production
