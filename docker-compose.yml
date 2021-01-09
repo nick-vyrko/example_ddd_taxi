@@ -8,8 +8,7 @@ services:
     volumes:
       - database-data:/var/lib/postgresql/data
     environment:
-      - PSQL_HISTFILE=/root/log/.psql_history
-      - POSTGRES_DB=psql_tmp
+      - POSTGRES_DB=tmp
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
   redis:
