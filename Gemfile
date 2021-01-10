@@ -8,7 +8,7 @@ gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
-gem 'rails_event_store', '~> 2.1'
+gem 'rails_event_store', '~> 2.1', require: %w[aggregate_root rails_event_store]
 gem 'dry-struct'
 gem 'dry-types'
 gem 'slim', '~> 4.1'

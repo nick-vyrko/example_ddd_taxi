@@ -33,7 +33,7 @@ module MyTaxi
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.paths.add 'lib',     eager_load: true
-    config.paths.add 'traffic', eager_load: true
+    config.paths.add 'domains', eager_load: true
 
     # Don't generate system test files.
     config.generators.system_tests = nil

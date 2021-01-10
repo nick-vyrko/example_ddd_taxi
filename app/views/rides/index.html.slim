@@ -1,0 +1,15 @@
+h1
+  | Rides
+
+- if @rides.empty?
+  h3 No rides performed
+- else
+  ul
+    - @rides.each do |ride|
+      li
+        div
+          = ride.uid
+        div
+          = ride.user_id
+        div
+          = ride.driver_id

@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_01_10_140907) do
   enable_extension "plpgsql"
 
   create_table "drivers", force: :cascade do |t|
-    t.string "user_id", null: false
+    t.integer "user_id", null: false
     t.string "state", default: "ignition", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

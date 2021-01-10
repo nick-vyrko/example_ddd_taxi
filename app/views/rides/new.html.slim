@@ -1,0 +1,12 @@
+h1
+  | Create new ride
+
+= form_tag({ controller: 'rides', action: 'create' }) do
+  div
+    | User&nbsp;
+    = select_tag(:user_id, options_for_select(@users))
+  div
+    | Driver&nbsp;
+    = select_tag(:driver_id, options_for_select(@drivers))
+
+  = submit_tag('Submit order')
