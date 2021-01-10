@@ -8,7 +8,7 @@ class RidesController < ApplicationController
   end
 
   def new
-
+    @ride = Ride.new(user_id: User, driver_id: Driver)
   end
 
   def create

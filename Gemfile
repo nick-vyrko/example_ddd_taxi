@@ -9,6 +9,9 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'rails_event_store', '~> 2.1'
+gem 'dry-struct'
+gem 'dry-types'
+gem 'slim', '~> 4.1'
 # gem 'redis', '~> 4.0'
 
 gem 'bootsnap', '>= 1.4.4', require: false
