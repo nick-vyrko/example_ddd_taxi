@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_07_205354) do
+ActiveRecord::Schema.define(version: 2021_01_10_140907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "drivers", force: :cascade do |t|
+    t.string "user_id", null: false
+    t.string "state", default: "ignition", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_drivers_on_user_id"
+  end
 
   create_table "event_store_events", id: :serial, force: :cascade do |t|
     t.uuid "event_id", null: false
@@ -37,6 +45,22 @@ ActiveRecord::Schema.define(version: 2021_01_07_205354) do
     t.index ["created_at"], name: "index_event_store_events_in_streams_on_created_at"
     t.index ["stream", "event_id"], name: "index_event_store_events_in_streams_on_stream_and_event_id", unique: true
     t.index ["stream", "position"], name: "index_event_store_events_in_streams_on_stream_and_position", unique: true
+  end
+
+  create_table "rides", force: :cascade do |t|
+    t.string "uid", null: false
+    t.string "user_id", null: false
+    t.string "driver_id", null: false
+    t.string "state", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["uid"], name: "index_rides_on_uid"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
